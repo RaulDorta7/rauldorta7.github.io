@@ -1,0 +1,122 @@
+<html>
+    <head>
+        <title>Formulario</title>
+        <link rel="stylesheet" href="formulario.css">
+    </head>
+    <body>
+        <form action="https://www.w3schools.com/action_page.php" method="post">
+            <fieldset>
+                <legend>Datos Usuario</legend>
+                <div class="form-row">
+                    <div>
+                        <label for="username">Nombre de Usuario</label>
+                        <input type="text" id="username" name="username" placeholder="UserName" size="50" minlength="3" required>
+                    </div>
+                    <div>
+                        <label for="contraseña">Contraseña</label>
+                        <input type="password" id="contraseña" name="contraseña" placeholder="Introduce contraseña" minlength="6" required>
+                        <div>
+                            <input type="checkbox" id="show-password" name="show-password">
+                            <label for="show-password">Mostrar Contraseña</label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+    
+            <fieldset>
+                <legend>Datos Personales</legend>
+                <div class="form-row">
+                    <div>
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" pattern="^[A-Za-zÁáÉéÍíÓóÚúÑñ]+$" placeholder="Nombre" required>
+                    </div>
+                    <div>
+                        <label for="apellido">Apellidos</label>
+                        <input type="text" id="apellido" name="apellido" pattern="^[A-Za-zÁáÉéÍíÓóÚúÑñ ]+$" placeholder="Apellidos" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div>
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="Ejem: (+34)922123123" pattern="^\(\+34\)\d{9}$" required>
+                        
+                    </div>
+                    <div>
+                        <label for="codigopostal">Código Postal</label>
+                        <input type="text" id="codigopostal" name="codigopostal" placeholder="38XXX" pattern="\d{5}" required>
+                        
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div>
+                        <label for="dni-type">DNI/NIE</label>
+                        <div class="form-row">
+                            <select id="dni-type" name="dni-type" required>
+                                <option value="" disabled selected>--</option>
+                                <option value="dni">DNI</option>
+                                <option value="nie">NIE</option>
+                            </select>
+                            <input type="text" id="dni-input" name="dni-input" placeholder="DNI/NIE" pattern="^[XYZ]?\d{7,8}[A-Z]$" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="tipo-cuenta">Crear cuenta como:</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="tipo-cuenta" value="particular" checked required> Particular</label>
+                            <label><input type="radio" name="tipo-cuenta" value="empresa" required> Empresa</label>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="añonac">Año de Nacimiento</label>
+                        <select id="añonac" name="añonac" required>
+                            <option value="2010" selected>2010</option>
+                            <option value="2009">2009</option>
+                            <option value="2008">2008</option>
+                            <option value="2007">2007</option>
+                            <option value="2006">2006</option>
+                            <option value="2005">2005</option>
+                            <option value="2004">2004</option>
+                            <option value="2003">2003</option>
+                            <option value="2002">2002</option>
+                            <option value="2001">2001</option>
+                            <option value="2000">2000</option>
+                            <option value="1999">1999</option>
+                            <option value="1998">1998</option>
+                            <option value="1997">1997</option>
+                            <option value="1996">1996</option>
+                            <option value="1995">1995</option>
+                            <option value="1994">1994</option>
+                            <option value="1993">1993</option>
+                            <option value="1992">1992</option>
+                            <option value="1991">1991</option>
+                            <option value="1990">1990</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <fieldset id="hobbies-group">
+                    <label>Elige tus aficiones:</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="hobbies" value="musica"> Música</label>
+                        <label><input type="checkbox" name="hobbies" value="deporte"> Deporte</label>
+                        <label><input type="checkbox" name="hobbies" value="videojuegos"> Video Juegos</label>
+                        <label><input type="checkbox" name="hobbies" value="manualidades"> Manualidades</label>
+                        <label><input type="checkbox" name="hobbies" value="artes"> Artes</label>
+                        <label><input type="checkbox" name="hobbies" value="lectura"> Lectura</label>
+                    </div>
+                </fieldset>
+            </fieldset>
+    
+            <fieldset>
+                <legend>Datos Publicación</legend>
+                <label for="titulo">Título</label>
+                <input type="text" id="titulo" name="titulo" placeholder="Título" maxlength="15" required>
+    
+                <label for="descripcion">Descripción</label>
+                <textarea id="descripcion" name="descripcion" placeholder="Descripción (máximo 120 caracteres)" maxlength="120" required></textarea>
+            </fieldset>
+    
+            <button type="submit">Enviar</button>
+        </form>
+    </body>
+</html>
