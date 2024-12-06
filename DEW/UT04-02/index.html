@@ -1,0 +1,123 @@
+<html>
+    <head>
+        <title>Formulario</title>
+        <link rel="stylesheet" href="formulario.css">
+     
+    </head>
+    <body>
+        <div class="container">
+        <form id="formulario" action="https://www.w3schools.com/action_page.php" method="post" novalidate >
+            <fieldset>
+                <legend>Datos Usuario</legend>
+                <div class="form-row">
+                    <div>
+                        <label for="NombreUsuario">Nombre de Usuario</label>
+                        <input type="text" id="NombreUsuario" name="NombreUsuario" placeholder="NombreUsuario" size="50" minlength="3" required>
+                        <span class="error-message" id="error-NombreUsuario"></span>
+                    </div>
+                    <div>
+                        <label for="Contrasena">Contraseña</label>
+                        <input type="password" id="Contrasena" name="Contrasena" placeholder="Introduce contraseña" minlength="6" required>
+                        <span class="error-message" id="error-Contraseña"></span>
+                        <div>
+                            <input type="checkbox" id="show-password" name="show-password">
+                            <label for="show-password">Mostrar Contraseña</label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+    
+            <fieldset>
+                <legend>Datos Personales</legend>
+                <div class="form-row">
+                    <div>
+                        <label for="Nombre">Nombre</label>
+                        <input type="text" id="Nombre" name="Nombre" pattern="^[A-Za-zÁáÉéÍíÓóÚúÑñ]+$" placeholder="Nombre" required>
+                        <span class="error-message" id="error-Nombre"></span>
+                    </div>
+                    <div>
+                        <label for="Apellidos">Apellidos</label>
+                        <input type="text" id="Apellidos" name="Apellidos" pattern="^[A-Za-zÁáÉéÍíÓóÚúÑñ ]+$" placeholder="Apellidos" required>
+                        <span class="error-message" id="error-Apellidos"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div>
+                        <label for="Telefono">Teléfono</label>
+                        <input type="tel" id="Telefono" name="Telefono" placeholder="Ejem: (+34)922123123" pattern="^\(\+34\)\d{9}$" required>
+                        <span class="error-message" id="error-Telefono"></span>
+                    </div>
+                    <div>
+                        <label for="CodigoPostal">Código Postal</label>
+                        <input type="text" id="CodigoPostal" name="CodigoPostal" placeholder="38XXX" pattern="38\d{3}" required>
+                        <span class="error-message" id="error-CodigoPostal"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div>
+                        <label for="TipoDocumento">DNI/NIE</label>
+                        <div class="form-row">
+                            <select id="TipoDocumento" name="TipoDocumento" required>
+                                <option value="" disabled selected>--</option>
+                                <option value="dni">DNI</option>
+                                <option value="nie">NIE</option>
+                            </select>
+                            <span class="error-message" id="error-tipoDocumento"></span>
+                            <input type="text" id="DniNie" name="DniNie" placeholder="DNI/NIE" pattern="^[XYZ]?\d{7,8}[A-Z]$" required>
+                            <span class="error-message" id="error-DniNie"></span>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="CuentaComo">Crear cuenta como:</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="CuentaComo" value="particular" checked required> Particular</label>
+                            <label><input type="radio" name="CuentaComo" value="empresa" required> Empresa</label>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="AnioNacimiento">Año de Nacimiento</label>
+                        <select id="AnioNacimiento" name="AnioNacimiento" required>
+                        </select>
+                    </div>
+                </div>
+                
+                <fieldset id="Aficiones">
+                    <label>Elige tus aficiones:</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="Aficiones" value="MU"> Música</label>
+                        <label><input type="checkbox" name="Aficiones" value="DE"> Deporte</label>
+                        <label><input type="checkbox" name="Aficiones" value="VI"> Video Juegos</label>
+                        <label><input type="checkbox" name="Aficiones" value="MA"> Manualidades</label>
+                        <label><input type="checkbox" name="Aficiones" value="AR"> Artes</label>
+                        <label><input type="checkbox" name="Aficiones" value="LE"> Lectura</label>
+                    </div>
+                    <span class="error-message" id="error-Aficiones"></span>
+                </fieldset>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Datos Publicación</legend>
+                <label for="PublicacionTitulo">Título</label>
+                <input type="text" id="PublicacionTitulo" name="PublicacionTitulo" placeholder="Título" maxlength="15" required >
+                <span id="caracteresTitulo">0/15</span>
+                <span class="error-message" id="error-PublicacionTitulo"></span>
+                <label for="PublicacionDescripcion">Descripción</label>
+                <textarea id="PublicacionDescripcion" name="PublicacionDescripcion" placeholder="Descripción (máximo 120 caracteres)" maxlength="120" required ></textarea>
+                <span id="caracteresDescripcion">0/120</span>
+                <span class="error-message" id="error-PublicacionDescripcion"></span>
+            </fieldset>
+    
+            <button type="submit">Enviar</button>
+        </form>
+
+       
+            <div id="mensajesValidacion">
+                <h2>Mensajes de Validación</h2>
+                <ul id="listaMensajes"></ul>
+            </div>
+        
+        
+    </div>
+        <script type="module" src="formulario.js" ></script>
+    </body>
+</html>
